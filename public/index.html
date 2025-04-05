@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Educational & Career Path Survey</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+    }
+    .form-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-5">Educational & Career Path Research Survey</h1>
+    <form action="/submit" method="POST" id="surveyForm">
+
+      <!-- Section 1: Basic Details -->
+      <div class="form-section">
+        <h2>Basic Details</h2>
+        <div class="mb-3"><label>Name:</label><input type="text" name="name" class="form-control"/></div>
+        <div class="mb-3"><label>Age:</label><input type="number" name="age" class="form-control"/></div>
+        <div class="mb-3"><label>Gender:</label>
+          <select name="gender" class="form-select">
+            <option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
+          </select>
+        </div>
+        <div class="mb-3"><label>Location (City, State):</label><input type="text" name="location" class="form-control"/></div>
+        <div class="mb-3"><label>Current Education/Profession:</label><input type="text" name="profession" class="form-control"/></div>
+      </div>
+
+      <!-- Section 2: Primary to Secondary -->
+      <div class="form-section">
+        <h2>Primary to Secondary (Class 1–10)</h2>
+        <div class="mb-3"><label>Which board did you study under?</label><input type="text" name="school_board" class="form-control"/></div>
+        <div class="mb-3"><label>Teaching quality rating (1–5):</label><input type="number" name="teaching_rating" min="1" max="5" class="form-control"/></div>
+        <div class="mb-3"><label>Were your interests encouraged?</label><select name="interest_encouraged" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Extra-curricular opportunities?</label><select name="extra_activities" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Were practical applications taught?</label><select name="practical_exposure" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <!-- Section 3: Higher Secondary -->
+      <div class="form-section">
+        <h2>Higher Secondary (Class 11–12)</h2>
+        <div class="mb-3"><label>Career counseling available?</label><select name="career_counseling" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Exposure to career options?</label><select name="career_exposure" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Did you do any real-world projects?</label><select name="real_projects" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Your chosen stream:</label><input type="text" name="stream" class="form-control"/></div>
+        <div class="mb-3"><label>Prepared for college-level challenges?</label><select name="college_ready" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <!-- Section 4: Exposure & Guidance -->
+      <div class="form-section">
+        <h2>Exposure & Guidance Before Career Decisions</h2>
+        <div class="mb-3"><label>Did you explore different career paths?</label><select name="career_exploration" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Aware of interviews/tests beforehand?</label><select name="interview_aware" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Received any mentorship?</label><select name="mentorship" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Understood private/public sector jobs?</label><select name="sector_understanding" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Learned about business or research?</label><select name="business_research_aware" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Anyone guided you about networking?</label><select name="networking_guidance" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Would you choose differently today with better guidance?</label><select name="alternative_choice" class="form-select"><option>Yes</option><option>No</option><option>Maybe</option></select></div>
+      </div>
+
+      <!-- Section 5: College -->
+      <div class="form-section">
+        <h2>College (Undergraduate)</h2>
+        <div class="mb-3"><label>Degree & specialization:</label><input type="text" name="ug_degree" class="form-control"/></div>
+        <div class="mb-3"><label>Did curriculum match industry?</label><select name="ug_industry_match" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Internship/project experience?</label><select name="ug_internship" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Career support rating (1–5):</label><input type="number" name="ug_support_rating" min="1" max="5" class="form-control"/></div>
+        <div class="mb-3"><label>Did you try freelancing or side projects?</label><select name="ug_freelance" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <!-- Section 6: Masters / PG -->
+      <div class="form-section">
+        <h2>Masters / PG</h2>
+        <div class="mb-3"><label>Field of study:</label><input type="text" name="pg_field" class="form-control"/></div>
+        <div class="mb-3"><label>Did it align with your UG or goals?</label><select name="pg_alignment" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Got research or publication chances?</label><select name="pg_research" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <!-- Section 7: PhD / Research -->
+      <div class="form-section">
+        <h2>PhD / Research</h2>
+        <div class="mb-3"><label>Field of research:</label><input type="text" name="phd_field" class="form-control"/></div>
+        <div class="mb-3"><label>Was it institutional or self-driven?</label><input type="text" name="phd_type" class="form-control"/></div>
+        <div class="mb-3"><label>Access to mentorship/labs/funding?</label><select name="phd_resources" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Clarity after PhD?</label><select name="phd_career_clarity" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <!-- Section 8: Career -->
+      <div class="form-section">
+        <h2>Career & Work Readiness</h2>
+        <div class="mb-3"><label>Are you currently working?</label><select name="working_now" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Job field & role:</label><input type="text" name="job_role" class="form-control"/></div>
+        <div class="mb-3"><label>Education prepared you for it?</label><select name="edu_job_prep" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Had to fill any skill gaps?</label><select name="skill_gaps" class="form-select"><option>Yes</option><option>No</option></select></div>
+        <div class="mb-3"><label>Preferred learning style?</label><select name="learning_style" class="form-select"><option>Practical</option><option>Theory</option><option>Online Courses</option></select></div>
+        <div class="mb-3"><label>Do you feel confident about your growth?</label><select name="career_confidence" class="form-select"><option>Yes</option><option>No</option></select></div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-gradient-submit shadow-sm">
+          Submit Survey
+        </button>
+      </div>
+          
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

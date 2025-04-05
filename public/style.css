@@ -1,0 +1,95 @@
+/* Gradient background for body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Centered and styled form container */
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    max-height: 95vh;
+  }
+  
+  /* Headings */
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+  }
+  
+  /* Label styling */
+  label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #f0f0f0;
+  }
+  
+  /* Input, select, textarea */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+  }
+  
+  /* Radio and checkbox */
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  /* Grouping of radio/checkbox options */
+  .options-group {
+    margin-top: 10px;
+  }
+  
+  /* Submit button styling */
+  .btn-gradient-submit {
+    margin-top: 30px;
+    width: 100%;
+    background: linear-gradient(135deg, #ff6a00, #ee0979); /* Orange to pink */
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-gradient-submit:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    box-shadow: 0 0 15px rgba(238, 9, 121, 0.6);
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 25px;
+    }
+  }
+  
